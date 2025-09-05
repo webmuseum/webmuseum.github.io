@@ -6,42 +6,72 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>WEBMUSEUM 2000's</header>
 
-  <nav>
-    <a href="#">members</a>
-    <a href="#">guest login</a>
-    <a href="#">be on the show!</a>
-    <a href="#">show tickets</a>
-    <a href="#">guest book</a>
-    <a href="#">buy the video</a>
-  </nav>
+  <div class="page">
 
-  <main>
-    <div class="search-box">
+    <!-- Nagłówek -->
+    <div class="header">
+      <div class="site-title">WEBMUSEUM</div>
+      <div class="tagline">retro vibes only</div>
+    </div>
+
+    <!-- Pasek wyszukiwarki -->
+    <div class="searchbar">
+      Search:
       <input type="text" id="searchInput" placeholder="Szukaj w artykułach...">
-      <button onclick="searchArticles()">GO!</button>
+      <button class="btn-go" onclick="searchArticles()">GO!</button>
     </div>
 
-    <div id="articles">
-      <div class="article">
-        <h2>chuj ci w dupsko</h2>
-        <p>Internet w latach 90. i 2000's rozwijał się w niesamowitym tempie. Strony były kolorowe, często robione w HTML 3.2.</p>
+    <!-- Główna siatka -->
+    <div class="layout">
+
+      <!-- Lewa nawigacja -->
+      <div class="side">
+        <div class="side-strip"></div>
+        <div class="side-nav">
+          <a href="#" class="nav-item">members</a>
+          <a href="#" class="nav-item">guest login</a>
+          <a href="#" class="nav-item">be on the show!</a>
+          <a href="#" class="nav-item">show tickets</a>
+          <a href="#" class="nav-item">guest book</a>
+          <a href="#" class="nav-item">buy the video</a>
+        </div>
       </div>
-      <div class="article">
-        <h2>WebDesign 2000</h2>
-        <p>Styl stron internetowych często zawierał jaskrawe kolory, tabele, gif-y oraz dźwięki MIDI.</p>
-      </div>
-      <div class="article">
-        <h2>WebMuseum</h2>
-        <p>Ta strona powstała, aby odtworzyć klimat starych witryn i zachować pamięć o złotej erze internetu.</p>
+
+      <!-- Prawa zawartość -->
+      <div class="content">
+
+        <div class="screen">
+          <div class="ribbon">WE GOT A WINNER!</div>
+        </div>
+
+        <div id="articles">
+
+          <div class="panel article">
+            <h3>Historia Internetu</h3>
+            <p>Internet w latach 90. i 2000's rozwijał się w niesamowitym tempie. Strony były kolorowe, często robione w HTML 3.2.</p>
+          </div>
+
+          <div class="panel article">
+            <h3>WebDesign 2000</h3>
+            <p>Styl stron internetowych często zawierał jaskrawe kolory, tabele, gif-y oraz dźwięki MIDI.</p>
+          </div>
+
+          <div class="panel article">
+            <h3>WebMuseum</h3>
+            <p>Ta strona powstała, aby odtworzyć klimat starych witryn i zachować pamięć o złotej erze internetu.</p>
+          </div>
+
+        </div>
       </div>
     </div>
-  </main>
 
-  <footer>
-    all rights reserved. &copy; WebMuseum 2000
-  </footer>
+    <!-- Stopka -->
+    <div class="footer">
+      all rights reserved. &copy; WebMuseum 2000
+    </div>
+
+  </div>
 
   <script>
     function searchArticles() {
@@ -49,7 +79,7 @@
       let articles = document.getElementsByClassName("article");
 
       for (let i = 0; i < articles.length; i++) {
-        let title = articles[i].getElementsByTagName("h2")[0].innerText.toLowerCase();
+        let title = articles[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
         let text = articles[i].getElementsByTagName("p")[0].innerText.toLowerCase();
 
         if (title.includes(input) || text.includes(input)) {
@@ -60,5 +90,6 @@
       }
     }
   </script>
+
 </body>
 </html>
