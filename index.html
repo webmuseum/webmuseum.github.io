@@ -4,16 +4,30 @@
   <meta charset="UTF-8">
   <title>WebMuseum 2000 - Your Retro Experience</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Styl podświetlenia wyników */
+    mark {
+      background: yellow;
+      color: black;
+      font-weight: bold;
+      padding: 0 2px;
+    }
+    .search-message {
+      font-size: 13px;
+      color: #333;
+      margin: 8px 0;
+    }
+  </style>
 </head>
 <body>
   <div class="page">
 
-    <!-- Retro Banner ceny/hasła -->
+    <!-- Banner -->
     <div class="price-banner">
       <div class="price">WELCOME TO WEBMUSEUM</div>
     </div>
 
-    <!-- Nagłówek z logiem -->
+    <!-- Nagłówek -->
     <header class="header">
       <h1 class="site-title">WEBMUSEUM.GITHUB.IO</h1>
       <div class="tagline">THE INTERNET... LIKE IT USED TO BE</div>
@@ -22,13 +36,13 @@
     <!-- Pasek wyszukiwarki -->
     <div class="searchbar">
       <span>SEARCH</span>
-      <input type="text" placeholder="type here...">
-      <button>GO!</button>
+      <input type="text" id="searchBox" placeholder="type here...">
+      <button onclick="searchSite()">GO!</button>
     </div>
+    <div id="searchResult" class="search-message"></div>
 
-    <!-- Layout: lewa nawigacja + treść -->
+    <!-- Layout -->
     <div class="layout">
-
       <!-- Lewy panel -->
       <aside class="side">
         <div class="side-strip"></div>
@@ -43,14 +57,12 @@
       </aside>
 
       <!-- Treść główna -->
-      <main class="content">
+      <main class="content" id="mainContent">
 
-        <!-- Retro ekran -->
         <div class="screen">
           <div class="ribbon">BEST OF THE EARLY WEB</div>
         </div>
 
-        <!-- Panel główny -->
         <div class="panel media-left">
           <div class="thumb"></div>
           <div>
@@ -61,7 +73,6 @@
           </div>
         </div>
 
-        <!-- Pasek z notką i zdjęciem -->
         <div class="notice">
           <div>
             Remember when websites had music, blinking gifs and counters?<br>
@@ -70,7 +81,6 @@
           <div class="pic"></div>
         </div>
 
-        <!-- Drugi panel -->
         <div class="panel media-right">
           <div>
             <h3>Retro Goodies</h3>
@@ -90,5 +100,61 @@
     </footer>
 
   </div>
+
+  <!-- Skrypt wyszukiwarki -->
+  <script>
+    function searchSite() {
+      const input = document.getElementById("searchBox").value.trim();
+      const content = document.getElementById("mainContent");
+      const resultBox = document.getElementById("searchResult");
+
+      // usuń stare podświetlenia
+      const oldMarks = content.querySelectorAll("mark");
+      oldMarks.forEach(mark => {
+        const parent = mark.parentNode;
+        parent.replaceChild(document.createTextNode(mark.textContent), mark);
+        parent.normalize();
+      });
+
+      if (input === "") {
+        resultBox.textContent = "Type something to search!";
+        return;
+      }
+
+      let regex = new RegExp(input, "gi");
+      let matches = 0;
+
+      function highlight(node) {
+        if (node.nodeType === 3) { // text node
+          const text = node.nodeValue;
+          const match = regex.exec(text);
+          if (match) {
+            const span = document.createElement("mark");
+            const before = document.createTextNode(text.substring(0, match.index));
+            const after = document.createTextNode(text.substring(match.index + match[0].length));
+            span.textContent = match[0];
+
+            const frag = document.createDocumentFragment();
+            frag.appendChild(before);
+            frag.appendChild(span);
+            frag.appendChild(after);
+
+            node.parentNode.replaceChild(frag, node);
+            matches++;
+          }
+        } else if (node.nodeType === 1 && node.childNodes) {
+          node.childNodes.forEach(highlight);
+        }
+      }
+
+      highlight(content);
+
+      if (matches > 0) {
+        resultBox.textContent = `Found ${matches} match(es) for "${input}".`;
+      } else {
+        resultBox.textContent = `No results for "${input}".`;
+      }
+    }
+  </script>
 </body>
 </html>
