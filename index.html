@@ -2,157 +2,139 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>WebMuseum 2000 - Your Retro Experience</title>
+  <title>WebMuseum 2000's</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Styl podświetlenia wyników */
-    mark {
-      background: yellow;
-      color: black;
-      font-weight: bold;
-      padding: 0 2px;
+    body {
+      background: #fff url('bg.gif');
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 12px;
+      color: #000;
+      margin: 0;
+      padding: 0;
     }
-    .search-message {
-      font-size: 13px;
-      color: #333;
-      margin: 8px 0;
+    header {
+      background: #000;
+      color: #ff9900;
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      padding: 15px;
+    }
+    nav {
+      background: #3366cc;
+      width: 180px;
+      float: left;
+      height: 100%;
+      padding: 10px;
+    }
+    nav a {
+      display: block;
+      background: #ffcc00;
+      margin: 5px 0;
+      padding: 5px;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background: #ff6600;
+      color: #fff;
+    }
+    main {
+      margin-left: 200px;
+      padding: 20px;
+    }
+    .search-box {
+      background: #ffcc00;
+      padding: 10px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .search-box input[type="text"] {
+      width: 60%;
+      padding: 5px;
+    }
+    .search-box button {
+      padding: 5px 10px;
+      background: #ff6600;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .article {
+      border: 2px solid #000;
+      background: #f5f5f5;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .article h2 {
+      margin: 0 0 5px;
+      font-size: 16px;
+      color: #cc0000;
+    }
+    footer {
+      clear: both;
+      text-align: center;
+      padding: 10px;
+      background: #000;
+      color: #fff;
+      font-size: 10px;
     }
   </style>
 </head>
 <body>
-  <div class="page">
+  <header>WEBMUSEUM 2000's</header>
 
-    <!-- Banner -->
-    <div class="price-banner">
-      <div class="price">WELCOME TO WEBMUSEUM</div>
+  <nav>
+    <a href="#">members</a>
+    <a href="#">guest login</a>
+    <a href="#">be on the show!</a>
+    <a href="#">show tickets</a>
+    <a href="#">guest book</a>
+    <a href="#">buy the video</a>
+  </nav>
+
+  <main>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Szukaj w artykułach...">
+      <button onclick="searchArticles()">GO!</button>
     </div>
 
-    <!-- Nagłówek -->
-    <header class="header">
-      <h1 class="site-title">WEBMUSEUM.GITHUB.IO</h1>
-      <div class="tagline">THE INTERNET... LIKE IT USED TO BE</div>
-    </header>
-
-    <!-- Pasek wyszukiwarki -->
-    <div class="searchbar">
-      <span>SEARCH</span>
-      <input type="text" id="searchBox" placeholder="type here...">
-      <button onclick="searchSite()">GO!</button>
+    <div id="articles">
+      <div class="article">
+        <h2>Historia Internetu</h2>
+        <p>Internet w latach 90. i 2000's rozwijał się w niesamowitym tempie. Strony były kolorowe, często robione w HTML 3.2.</p>
+      </div>
+      <div class="article">
+        <h2>WebDesign 2000</h2>
+        <p>Styl stron internetowych często zawierał jaskrawe kolory, tabele, gif-y oraz dźwięki MIDI.</p>
+      </div>
+      <div class="article">
+        <h2>WebMuseum</h2>
+        <p>Ta strona powstała, aby odtworzyć klimat starych witryn i zachować pamięć o złotej erze internetu.</p>
+      </div>
     </div>
-    <div id="searchResult" class="search-message"></div>
+  </main>
 
-    <!-- Layout -->
-    <div class="layout">
-      <!-- Lewy panel -->
-      <aside class="side">
-        <div class="side-strip"></div>
-        <nav class="side-nav">
-          <a href="#" class="nav-item">home</a>
-          <a href="#" class="nav-item">retro gallery</a>
-          <a href="#" class="nav-item">old websites</a>
-          <a href="#" class="nav-item">guestbook</a>
-          <a href="#" class="nav-item">downloads</a>
-          <a href="#" class="nav-item">contact</a>
-        </nav>
-      </aside>
+  <footer>
+    all rights reserved. &copy; WebMuseum 2000
+  </footer>
 
-      <!-- Treść główna -->
-      <main class="content" id="mainContent">
-
-        <div class="screen">
-          <div class="ribbon">BEST OF THE EARLY WEB</div>
-        </div>
-
-        <div class="panel media-left">
-          <div class="thumb"></div>
-          <div>
-            <h3>About WebMuseum</h3>
-            <p>This project is dedicated to preserving the look and feel of the early 2000’s Internet.<br>
-            Flash banners, hit counters, guestbooks – all in one place.<br>
-            Step back in time and explore what the web used to look like!</p>
-          </div>
-        </div>
-
-        <div class="notice">
-          <div>
-            Remember when websites had music, blinking gifs and counters?<br>
-            WebMuseum brings those memories back – and keeps them alive for the next generations.
-          </div>
-          <div class="pic"></div>
-        </div>
-
-        <div class="panel media-right">
-          <div>
-            <h3>Retro Goodies</h3>
-            <p>Browse through our collection of classic websites, screenshots and HTML relics.<br>
-            Everything from Geocities, Angelfire to early Flash experiments.<br>
-            Relive the golden age of personal pages!</p>
-          </div>
-          <div class="thumb"></div>
-        </div>
-
-      </main>
-    </div>
-
-    <!-- Stopka -->
-    <footer class="footer">
-      &copy; 2000-2025 WebMuseum Project. All rights reserved. Best viewed in Netscape Navigator 4.0 or Internet Explorer 5.0 ;)
-    </footer>
-
-  </div>
-
-  <!-- Skrypt wyszukiwarki -->
   <script>
-    function searchSite() {
-      const input = document.getElementById("searchBox").value.trim();
-      const content = document.getElementById("mainContent");
-      const resultBox = document.getElementById("searchResult");
+    function searchArticles() {
+      let input = document.getElementById("searchInput").value.toLowerCase();
+      let articles = document.getElementsByClassName("article");
 
-      // usuń stare podświetlenia
-      const oldMarks = content.querySelectorAll("mark");
-      oldMarks.forEach(mark => {
-        const parent = mark.parentNode;
-        parent.replaceChild(document.createTextNode(mark.textContent), mark);
-        parent.normalize();
-      });
+      for (let i = 0; i < articles.length; i++) {
+        let title = articles[i].getElementsByTagName("h2")[0].innerText.toLowerCase();
+        let text = articles[i].getElementsByTagName("p")[0].innerText.toLowerCase();
 
-      if (input === "") {
-        resultBox.textContent = "Type something to search!";
-        return;
-      }
-
-      let regex = new RegExp(input, "gi");
-      let matches = 0;
-
-      function highlight(node) {
-        if (node.nodeType === 3) { // text node
-          const text = node.nodeValue;
-          const match = regex.exec(text);
-          if (match) {
-            const span = document.createElement("mark");
-            const before = document.createTextNode(text.substring(0, match.index));
-            const after = document.createTextNode(text.substring(match.index + match[0].length));
-            span.textContent = match[0];
-
-            const frag = document.createDocumentFragment();
-            frag.appendChild(before);
-            frag.appendChild(span);
-            frag.appendChild(after);
-
-            node.parentNode.replaceChild(frag, node);
-            matches++;
-          }
-        } else if (node.nodeType === 1 && node.childNodes) {
-          node.childNodes.forEach(highlight);
+        if (title.includes(input) || text.includes(input)) {
+          articles[i].style.display = "block";
+        } else {
+          articles[i].style.display = "none";
         }
-      }
-
-      highlight(content);
-
-      if (matches > 0) {
-        resultBox.textContent = `Found ${matches} match(es) for "${input}".`;
-      } else {
-        resultBox.textContent = `No results for "${input}".`;
       }
     }
   </script>
