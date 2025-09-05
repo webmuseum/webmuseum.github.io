@@ -1,81 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
-  <title>WebMuseum 2000</title>
   <meta charset="UTF-8">
-  <style>
-    body {
-      background="bgstars.gif";
-      background-color: #000000;
-      text-align: center;
-      font-family: "Comic Sans MS", cursive;
-      color: #00FF00;
-    }
-
-    h1 {
-      font-size: 50px;
-      color: #FFFF00;
-      text-shadow: 2px 2px #FF00FF;
-    }
-
-    .menu {
-      background-color: #3333FF;
-      border: 3px groove #FFFFFF;
-      padding: 10px;
-      margin: 10px;
-    }
-
-    a {
-      color: #00FFFF;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .content {
-      background-color: #FF99FF;
-      border: 5px inset #FF0000;
-      padding: 20px;
-      margin: 20px;
-    }
-
-    .blink {
-      color: red;
-      font-weight: bold;
-    }
-
-    .counter {
-      font-size: 14px;
-      color: #FFFFFF;
-      margin-top: 20px;
-    }
-  </style>
+  <title>TappyTibbons.com - Excellence and Excitement</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body background="https://www.textures4photoshop.com/tex/thumbs/seamless-stars-pattern-for-photoshop-free-thumb17.jpg">
+<body>
+  <div class="page">
 
-  <h1>🌐 WebMuseum 2000 🌐</h1>
+    <!-- Banner ceny -->
+    <div class="price-banner">
+      <div class="price">ONLY <small>$</small>19.95</div>
+    </div>
 
-  <marquee behavior="alternate" scrollamount="10">💾 Witamy w muzeum internetu! 💾</marquee>
+    <!-- Nagłówek z logo -->
+    <header class="header">
+      <h1 class="site-title">TAPPYTIBBONS.COM</h1>
+      <div class="tagline">JOIN US IN CREATING EXCELLENCE</div>
+    </header>
 
-  <div class="menu">
-    <a href="index.html">Strona Główna</a> | 
-    <a href="#">Eksponaty</a> | 
-    <a href="#">Download</a> | 
-    <a href="#">Kontakt</a>
+    <!-- Pasek wyszukiwarki -->
+    <div class="searchbar">
+      <span>SEARCH</span>
+      <input type="text" placeholder="">
+      <button>GO!</button>
+    </div>
+
+    <!-- Layout: lewa nawigacja + treść -->
+    <div class="layout">
+
+      <!-- Lewy panel -->
+      <aside class="side">
+        <div class="side-strip"></div>
+        <nav class="side-nav">
+          <a href="#" class="nav-item">members</a>
+          <a href="#" class="nav-item">guest login</a>
+          <a href="#" class="nav-item">be on the show!</a>
+          <a href="#" class="nav-item">show tickets</a>
+          <a href="#" class="nav-item">guest book</a>
+          <a href="#" class="nav-item">buy the video</a>
+        </nav>
+      </aside>
+
+      <!-- Treść główna -->
+      <main class="content">
+
+        <!-- Ekran -->
+        <div class="screen">
+          <div class="ribbon">WE GOT A WINNER</div>
+        </div>
+
+        <!-- Panel główny -->
+        <div class="panel media-left">
+          <div class="thumb"></div>
+          <div>
+            <h3>Welcome to TappyTibbons.com</h3>
+            <p>Home of Excellence and Excitement.<br>
+            Become a Member today and pay absolutely nothing for the first month and only $4.99 after.<br>
+            And yes: you can be a winner, too! Come on the show by buying tickets online. It’s as easy as one, two, three. Just follow the Links on the left.</p>
+          </div>
+        </div>
+
+        <!-- Pasek z notką i zdjęciem -->
+        <div class="notice">
+          <div>
+            Mary Kellington from Washington, D.C. was our winner on the last show and just look at her smile. Would you like to revolutionize YOUR life and be on the show?<br>
+            Simply follow the Link and fill out the form and you may get a call as soon as tomorrow !!!
+          </div>
+          <div class="pic"></div>
+        </div>
+
+        <!-- Drugi panel -->
+        <div class="panel media-left">
+          <div class="thumb"></div>
+          <div>
+            <h3>Month of Fury</h3>
+            <p>Yes, Tappy Tibbons’ “Month of Fury” has finally arrived. 30 days to revolutionize your life. Buy the book now online for only $19.95 and you get a copy of “Juice by You” for half the price.<br>
+            Or simply call 1-900-878-JUICE.<br>
+            All major credit cards accepted.</p>
+          </div>
+        </div>
+
+      </main>
+    </div>
+
+    <!-- Stopka -->
+    <footer class="footer">
+      all rights reserved. &copy; Tappy Tibbons, inc. 2000
+    </footer>
+
   </div>
-
-  <div class="content">
-    <p class="blink">🔥 Nowość! Dodaliśmy kolekcję gifów z 1999! 🔥</p>
-    <img src="https://i.gifer.com/7VE.gif" alt="Dancing Baby" width="150"><br><br>
-    <embed src="https://www.vgmusic.com/music/console/nintendo/nes/Tetris_theme.mid" autostart="true" loop="true" hidden="true">
-    <p><b>Dodaj nas do ulubionych i nie zapomnij o księdze gości!</b></p>
-  </div>
-
-  <div class="counter">
-    Odwiedzin: <img src="https://www.free-website-hit-counters.com/c.php?d=9&id=12345&s=5" alt="Licznik odwiedzin">
-  </div>
-
-  <hr>
-  <p style="font-size:12px;">&copy; 2000 WebMuseum. Wszystkie prawa zastrzeżone.</p>
-
 </body>
 </html>
