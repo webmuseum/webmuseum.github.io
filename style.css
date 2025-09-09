@@ -1,312 +1,241 @@
-/* ====== TappyTibbons.com – retro 1:1 look ====== */
-/* Paleta, spacing, fonty */
-:root{
-  --bg: #f2f4fb;
-  --ink: #111;
-  --ink-soft:#333;
-  --brand-blue:#1a6fd0;
-  --brand-blue-deep:#0e3e8a;
-  --brand-blue-soft:#4aa3ff;
-  --gold:#fdb913;
-  --gold-deep:#d18a00;
-  --orange:#ff8a00;
-  --orange-deep:#d46000;
-  --orange-soft:#ffb25a;
-  --nav-blue-1:#7fa4e8;
-  --nav-blue-2:#bcd0ff;
-  --nav-blue-3:#dfe7ff;
-  --card: #ff8a00;
-  --card-dark:#cc5700;
-  --white:#fff;
-  --muted:#e9ecf8;
-  --shadow: 0 2px 0 rgba(0,0,0,.25), 0 6px 18px rgba(0,0,0,.08);
-  --radius: 8px;
-  --radius-lg: 10px;
+/* ====== Styl retro: Windows XP Edition ====== */
+
+/* Reset i podstawy */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f2f4fb;
+  font: 13px "Trebuchet MS", Tahoma, Verdana, sans-serif;
+  color: #111;
 }
 
-@font-face{
-  font-family: "Impact Fallback";
-  src: local("Impact"), local("Haettenschweiler");
-  font-display: swap;
-}
-
-*{box-sizing:border-box}
-html,body{
-  height:100%;
-}
-body{
-  margin:0;
-  background:
-    linear-gradient(180deg, #ffffff 0 120px, var(--bg) 120px 100%),
-    radial-gradient(1200px 200px at center 80px, rgba(0,0,0,.06), transparent 60%);
-  color:var(--ink);
-  font: 15px/1.4 "Trebuchet MS", Tahoma, Verdana, Arial, sans-serif;
-}
-
-/* ====== Strona – siatka ====== */
-.page{
-  max-width: 960px;
+/* ====== Layout główny ====== */
+.page {
+  width: 960px;
   margin: 0 auto;
   padding: 16px 12px 40px;
-  position: relative;
 }
 
-/* ====== BANER CENY ====== */
-.price-banner{
-  background: #000;
-  border: 3px solid #4d6fb3;
-  border-radius: 12px;
-  padding: 16px 24px;
-  text-align:center;
-  box-shadow: var(--shadow);
-}
-.price-banner .price{
-  font: 700 64px/1 "Impact Fallback", "Arial Black", system-ui, sans-serif;
-  letter-spacing: 2px;
-  color: var(--gold);
-  text-shadow: 0 0 6px rgba(0,0,0,.4), 0 2px 0 #000;
-}
-.price-banner .price small{
-  font-size:.45em;
-}
-
-/* ====== GŁÓWNE LOGO/NAGŁÓWEK Z LINIOWANIEM ====== */
-.header{
+/* ====== Nagłówek ====== */
+.header {
   margin: 18px 0 10px;
   padding: 16px 10px 10px;
-  position: relative;
   border-top: 4px double #88a2df;
   border-bottom: 4px double #88a2df;
-  background:
-    repeating-linear-gradient(90deg, transparent 0 8px, rgba(26,111,208,.12) 8px 10px);
+  background-color: #e0e8f8;
+  background-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="); /* retro pixel trick */
 }
-.site-title{
-  font: 900 42px/1 "Impact Fallback","Arial Black", sans-serif;
-  color: var(--brand-blue);
-  text-shadow:
-    -1px -1px 0 #052b66,
-    1px 1px 0 #9dc4ff,
-    0 2px 0 rgba(0,0,0,.25);
+
+.site-title {
+  font: bold 42px "Impact", "Arial Black", sans-serif;
+  color: #1a6fd0;
+  text-shadow: -1px -1px 0 #052b66, 1px 1px 0 #9dc4ff, 0 2px 0 rgba(0,0,0,.25);
   letter-spacing: 1px;
-  display:inline-block;
+  display: inline-block;
 }
-.header .tagline{
-  float:right;
+
+.header .tagline {
+  float: right;
   margin-top: 8px;
   padding: 8px 14px;
-  background: linear-gradient(180deg, #ffd280, #ff9e1c);
-  border: 2px solid var(--orange-deep);
-  color:#1a1a1a;
-  font-weight: 800;
+  background: #ffd280;
+  border: 2px solid #d46000;
+  color: #1a1a1a;
+  font-weight: bold;
   font-size: 14px;
-  border-radius: 999px;
-  box-shadow: 0 2px 0 rgba(0,0,0,.2);
+  border-radius: 12px;
+  border-style: outset;
 }
 
-/* ====== PASEK WYSZUKIWARKI ====== */
-.searchbar{
+/* ====== Pasek wyszukiwarki ====== */
+.searchbar {
   margin: 8px 0 12px;
   padding: 6px 10px;
-  background: linear-gradient(180deg, #ffe9c2, #ffc06e);
-  border: 2px solid var(--orange-deep);
-  border-radius: var(--radius);
-  display:flex;
-  align-items:center;
-  gap:8px;
-  font-weight:700;
-  color:#2b2b2b;
-  text-transform:uppercase;
-  letter-spacing:.04em;
-}
-.searchbar input[type="text"]{
-  flex:0 0 220px;
-  height:26px;
-  border:2px inset #d48b33;
-  background:#fffbe8;
-  padding:0 8px;
-  font: 700 13px/1.2 "Trebuchet MS", Tahoma, sans-serif;
-}
-.searchbar button{
-  height:28px;
-  padding:0 10px;
-  border:2px solid #0e3e8a;
-  background: linear-gradient(180deg, var(--brand-blue-soft), var(--brand-blue));
-  color:#fff;
-  font-weight:800;
-  border-radius:6px;
-  text-transform:uppercase;
-  box-shadow: 0 2px 0 rgba(0,0,0,.25);
-  cursor:pointer;
+  background: #ffe9c2;
+  border: 2px inset #d46000;
+  font-weight: bold;
+  color: #2b2b2b;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  overflow: hidden;
 }
 
-/* ====== LEWY PANEL NAWIGACJI ====== */
-.layout{
-  display:grid;
-  grid-template-columns: 190px 1fr;
-  gap: 16px;
-  align-items: start;
-}
-.side{
-  position:relative;
-}
-.side .side-strip{
-  position:absolute;
-  inset: -8px 0 auto -12px;
-  width: 210px;
-  height: 420px;
-  background: linear-gradient(180deg, var(--nav-blue-2), var(--nav-blue-1) 45%, var(--nav-blue-3));
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  z-index:-1;
-}
-.side-nav{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-  padding:10px 6px;
-}
-.side-nav .nav-item{
-  display:block;
-  text-decoration:none;
-  font: 800 13px/38px "Trebuchet MS", Tahoma, sans-serif;
-  text-transform:lowercase;
-  color:#102b5d;
-  padding: 0 14px;
-  border-radius: 6px;
-  border: 2px solid #0e3e8a;
-  background:
-    linear-gradient(180deg, #eaf1ff, #bcd0ff 60%, #8fb1ff);
-  box-shadow: 0 2px 0 rgba(0,0,0,.25);
-}
-.side-nav .nav-item:hover{
-  filter: brightness(1.05);
-  transform: translateY(-1px);
+.searchbar input[type="text"] {
+  float: left;
+  width: 220px;
+  height: 26px;
+  border: 2px inset #d48b33;
+  background: #fffbe8;
+  padding: 0 8px;
+  font: bold 13px "Trebuchet MS", Tahoma, sans-serif;
 }
 
-/* ====== ZAWARTOŚĆ ====== */
-.content{
+.searchbar button {
+  float: left;
+  height: 28px;
+  padding: 0 10px;
+  margin-left: 8px;
+  border: 2px outset #0e3e8a;
+  background: #4aa3ff;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* ====== Layout boczny ====== */
+.layout {
+  overflow: hidden;
+}
+
+.side {
+  float: left;
+  width: 190px;
+  background: #dfe7ff;
+  border: 2px inset #7fa4e8;
+  padding: 10px;
+}
+
+.side-nav .nav-item {
+  display: block;
+  text-decoration: none;
+  font: bold 13px "Trebuchet MS", Tahoma, sans-serif;
+  color: #102b5d;
+  padding: 6px 14px;
+  margin-bottom: 8px;
+  border: 2px outset #0e3e8a;
+  background: #bcd0ff;
+}
+
+.side-nav .nav-item:hover {
+  background: #8fb1ff;
+}
+
+/* ====== Zawartość główna ====== */
+.content {
+  margin-left: 206px;
   background: #fff;
-  border-radius: var(--radius);
-  border: 1px solid #cdd7ff;
+  border: 2px outset #cdd7ff;
   padding: 12px;
-  box-shadow: var(--shadow);
-  position:relative;
 }
 
-/* ramka „ekranu” głównego (czarny pas + niebieska ramka) */
-.content .screen{
-  background:#000;
-  border: 3px solid var(--brand-blue);
-  border-radius: 10px;
+/* ====== Panel z ekranem ====== */
+.content .screen {
+  background: #000;
+  border: 3px solid #1a6fd0;
   padding: 8px;
   margin-bottom: 14px;
 }
 
-/* ====== Panele pomarańczowe z treścią ====== */
-.panel{
-  position:relative;
-  background: linear-gradient(180deg, var(--orange), var(--orange-soft));
-  border: 2px solid var(--orange-deep);
-  border-radius: var(--radius-lg);
-  color:#1a1a1a;
-  padding: 12px 12px 12px 12px;
+/* ====== Panel pomarańczowy ====== */
+.panel {
+  background: #ffb25a;
+  border: 2px solid #d46000;
+  padding: 12px;
   margin: 10px 0;
-  box-shadow: 0 2px 0 rgba(0,0,0,.25);
+  font: 13px "Verdana", sans-serif;
 }
-.panel h3{
-  margin:0 0 6px;
-  font: 700 14px/1 "Trebuchet MS", Tahoma, sans-serif;
-  text-transform:uppercase;
-  letter-spacing:.02em;
+
+.panel h3 {
+  margin: 0 0 6px;
+  font: bold 14px "Trebuchet MS", Tahoma, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .02em;
 }
-.panel p{
-  margin:6px 0;
-  font-size:13px;
+
+.panel p {
+  margin: 6px 0;
+  font-size: 13px;
 }
-.panel .thumb{
+
+.panel .thumb {
   width: 220px;
   height: 120px;
   border: 3px solid #0e3e8a;
-  border-radius: 8px;
-  background: linear-gradient(180deg, #0b2e68, #1a6fd0);
-  box-shadow: inset 0 0 0 3px #000;
+  background: #1a6fd0;
 }
 
-/* wariant z miniaturą po LEWEJ */
-.panel.media-left{
-  display:grid;
-  grid-template-columns: 240px 1fr;
-  gap: 12px;
-  align-items:start;
+/* ====== Panel z miniaturą po lewej ====== */
+.panel.media-left .thumb {
+  float: left;
+  margin-right: 12px;
 }
 
-/* wariant z miniaturą po PRAWEJ */
-.panel.media-right{
-  display:grid;
-  grid-template-columns: 1fr 240px;
-  gap:12px;
-  align-items:start;
+.panel.media-left .text {
+  overflow: hidden;
 }
 
-/* mini pasek info pod „ekranem” (tekst + mała fotka po prawej) */
-.notice{
-  display:grid;
-  grid-template-columns: 1fr 220px;
-  gap: 12px;
-  align-items:center;
+/* ====== Panel z miniaturą po prawej ====== */
+.panel.media-right .thumb {
+  float: right;
+  margin-left: 12px;
+}
+
+.panel.media-right .text {
+  overflow: hidden;
+}
+
+/* ====== Pasek info ====== */
+.notice {
+  overflow: hidden;
   margin: 6px 0 10px;
   font-size: 13px;
-  color:#1a1a1a;
-}
-.notice .pic{
-  height:120px;
-  border:3px solid #0e3e8a;
-  border-radius:8px;
-  background: linear-gradient(180deg, #113a7d, #1a6fd0);
-  box-shadow: inset 0 0 0 3px #000;
+  color: #1a1a1a;
 }
 
-/* „WE GOT A WINNER” – niebieski pasek */
-.ribbon{
+.notice .pic {
+  float: right;
+  width: 220px;
+  height: 120px;
+  border: 3px solid #0e3e8a;
+  background: #1a6fd0;
+}
+
+/* ====== Pasek „WE GOT A WINNER” ====== */
+.ribbon {
   height: 38px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font: 900 18px/1 "Impact Fallback","Arial Black", sans-serif;
-  letter-spacing:.03em;
-  color:#fff;
-  text-shadow: 0 2px 0 rgba(0,0,0,.35);
-  background:
-    linear-gradient(180deg, #133f8e, #0e3e8a 50%, #0a2f6d);
-  border: 2px solid #072b62;
-  border-radius:8px;
+  line-height: 38px;
+  text-align: center;
+  font: bold 18px "Impact", "Arial Black", sans-serif;
+  color: #fff;
+  background: #0e3e8a;
+  border: 2px outset #072b62;
   margin: 6px 0 10px;
 }
 
-/* przycisk „GO!” w pasku wyszukiwarki (dodatkowy wariant) */
-.btn-go{
-  font: 900 13px/26px "Impact Fallback","Arial Black", sans-serif;
+/* ====== Przycisk GO! ====== */
+.btn-go {
+  font: bold 13px "Impact", "Arial Black", sans-serif;
   padding: 0 12px;
-  border-radius:6px;
-  border:2px solid #0e3e8a;
-  background: linear-gradient(180deg, var(--brand-blue-soft), var(--brand-blue));
-  color:#fff;
-  text-shadow:0 1px 0 rgba(0,0,0,.4);
+  border: 2px outset #0e3e8a;
+  background: #4aa3ff;
+  color: #fff;
 }
 
 /* ====== Stopka ====== */
-.footer{
+.footer {
   margin-top: 16px;
   padding: 10px 6px;
   font-size: 12px;
-  color:#223;
-  text-align:left;
+  color: #223;
+  text-align: left;
   border-top: 1px solid #cdd7ff;
 }
 
-/* ====== Drobne „pikselowe” smaczki retro ====== */
-.shadow-inset{
+/* ====== Dodatki retro ====== */
+.shadow-inset {
   box-shadow: inset 0 1px 0 rgba(255,255,255,.5), inset 0 -1px 0 rgba(0,0,0,.12);
 }
-.upper{ text-transform: uppercase; }
-.small{ font-size: .92em; }
+.upper {
+  text-transform: uppercase;
+}
+.small {
+  font-size: 0.92em;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
