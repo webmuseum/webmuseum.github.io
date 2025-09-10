@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html lang="pl">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 <head>
-  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>WebMuseum 2000's</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
 
@@ -18,7 +19,7 @@
     <!-- Pasek wyszukiwarki -->
     <div class="searchbar">
       Search:
-      <input type="text" id="searchInput" placeholder="Szukaj w artykułach...">
+      <input type="text" id="searchInput" placeholder="Szukaj w artykułach..." />
       <button class="btn-go" onclick="searchArticles()">GO!</button>
     </div>
 
@@ -49,13 +50,13 @@
 
           <div class="panel article">
             <h3>Historia Internetu</h3>
-            <img src="https://blob.gifcities.org/gifcities/YKDZRST6S6JS3KG5DPRBVLN35FY4CPDY.gif" alt="przykład" style="width:50px; height:auto; border-radius:6px;">
+            <img src="https://blob.gifcities.org/gifcities/YKDZRST6S6JS3KG5DPRBVLN35FY4CPDY.gif" alt="przykład" style="width:50px; height:auto;" />
             <p>W latach 90. i na początku 2000. Internet rozwijał się w niezwykle szybkim tempie. Strony internetowe były pełne kolorów i często tworzone w HTML 3.2, co różni się od dzisiejszych trendów. Obecnie dominują minimalistyczne projekty z ograniczoną liczbą przycisków.</p>
           </div>
 
           <div class="panel article">
             <h3>WebDesign 2000</h3>
-            <img src="https://blob.gifcities.org/gifcities/BZIEEMMZ342AKFHX7SNCMBADL4C7MW4C.gif" alt="brrrrum" style="width:150px; height:auto; border-radius:6px;">
+            <img src="https://blob.gifcities.org/gifcities/BZIEEMMZ342AKFHX7SNCMBADL4C7MW4C.gif" alt="brrrrum" style="width:150px; height:auto;" />
             <p>Styl stron internetowych zazwyczaj charakteryzował się intensywnymi kolorami, tabelami, animacjami gif oraz dźwiękami w formacie MIDI.</p>
           </div>
 
@@ -67,7 +68,7 @@
           <div class="panel article">
             <h3>Inspiracja</h3>
             <p>Styl tej strony czerpie inspirację z dawnej witryny TAPPYTIBBONS.COM, która już nie funkcjonuje, ale jej wygląd można jeszcze zobaczyć</p>
-            <a href="https://www.webdesignmuseum.org/uploaded/fullscreen/requiem-for-a-dream-2000.png" style="display:block; text-decoration:none; font: 800 13px/38px 'Trebuchet MS', Tahoma, sans-sefir; text-transform:lowercase; color:#102b5d; padding: 0 14px; border-radius: 6px; border: 2px solid #0e3e8a; background:  linear-gradient(180deg, #eaf1ff, #bcd0ff 60%, #8fb1ff); box-shadow: 0 2px 0 rgba(0,0,0,.25);">TUTAJ</a>
+            <a href="https://www.webdesignmuseum.org/uploaded/fullscreen/requiem-for-a-dream-2000.png" style="display:block; text-decoration:none; font-weight:800; font-size:13px; line-height:38px; font-family:'Trebuchet MS', Tahoma, sans-serif; text-transform:lowercase; color:#102b5d; padding:0 14px; border:2px solid #0e3e8a; background:#bcd0ff;">TUTAJ</a>
           </div>
 
         </div>
@@ -81,16 +82,16 @@
 
   </div>
 
-  <script>
+  <script type="text/javascript">
     function searchArticles() {
-      let input = document.getElementById("searchInput").value.toLowerCase();
-      let articles = document.getElementsByClassName("article");
+      var input = document.getElementById("searchInput").value.toLowerCase();
+      var articles = document.getElementsByClassName("article");
 
-      for (let i = 0; i < articles.length; i++) {
-        let title = articles[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
-        let text = articles[i].getElementsByTagName("p")[0].innerText.toLowerCase();
+      for (var i = 0; i < articles.length; i++) {
+        var title = articles[i].getElementsByTagName("h3")[0].innerHTML.toLowerCase();
+        var text = articles[i].getElementsByTagName("p")[0].innerHTML.toLowerCase();
 
-        if (title.includes(input) || text.includes(input)) {
+        if (title.indexOf(input) !== -1 || text.indexOf(input) !== -1) {
           articles[i].style.display = "block";
         } else {
           articles[i].style.display = "none";
