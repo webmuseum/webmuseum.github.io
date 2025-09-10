@@ -1,9 +1,6 @@
-/* ====== Styl retro: Windows XP Edition ====== */
+/* ====== Styl retro: Windows XP Edition (CSS 2.1) ====== */
 
 /* Reset i podstawy */
-* {
-  box-sizing: border-box;
-}
 body {
   margin: 0;
   padding: 0;
@@ -26,13 +23,12 @@ body {
   border-top: 4px double #88a2df;
   border-bottom: 4px double #88a2df;
   background-color: #e0e8f8;
-  background-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="); /* retro pixel trick */
+  background-image: url("pixel.gif"); /* zamień na plik GIF */
 }
 
 .site-title {
   font: bold 42px "Impact", "Arial Black", sans-serif;
   color: #1a6fd0;
-  text-shadow: -1px -1px 0 #052b66, 1px 1px 0 #9dc4ff, 0 2px 0 rgba(0,0,0,.25);
   letter-spacing: 1px;
   display: inline-block;
 }
@@ -42,12 +38,10 @@ body {
   margin-top: 8px;
   padding: 8px 14px;
   background: #ffd280;
-  border: 2px solid #d46000;
+  border: 2px outset #d46000;
   color: #1a1a1a;
   font-weight: bold;
   font-size: 14px;
-  border-radius: 12px;
-  border-style: outset;
 }
 
 /* ====== Pasek wyszukiwarki ====== */
@@ -63,7 +57,7 @@ body {
   overflow: hidden;
 }
 
-.searchbar input[type="text"] {
+.searchbar input {
   float: left;
   width: 220px;
   height: 26px;
@@ -225,16 +219,13 @@ body {
 }
 
 /* ====== Dodatki retro ====== */
-.shadow-inset {
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.5), inset 0 -1px 0 rgba(0,0,0,.12);
-}
 .upper {
   text-transform: uppercase;
 }
 .small {
   font-size: 0.92em;
 }
-.clearfix::after {
+.clearfix:after {
   content: "";
   display: block;
   clear: both;
