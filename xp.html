@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>WebMuseum 2000's</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- Nagłówek -->
+    <div class="header">
+      <div class="site-title">WEBMUSEUM</div>
+      <div class="tagline">Windows XP...</div>
+    </div>
+
+    <!-- Główna siatka -->
+    <div class="layout">
+
+      <!-- Lewa nawigacja -->
+      <div class="side">
+        <div class="side-strip"></div>
+        <div class="side-nav">
+          <a href="index.html" class="nav-item">HOME</a>
+          <a href="xp.html" class="nav-item">XP</a>
+          <a href="#" class="nav-item">be on the show!</a>
+          <a href="#" class="nav-item">show tickets</a>
+          <a href="#" class="nav-item">guest book</a>
+          <a href="#" class="nav-item">buy the video</a>
+        </div>
+      </div>
+
+      <!-- Prawa zawartość -->
+      <div class="content">
+
+        <div class="screen">
+          <div class="ribbon">WE GOT A WINNER!</div>
+        </div>
+
+        <div id="articles">
+
+          <div class="panel article">
+            <h3>Historia Internetu</h3>
+            
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Stopka -->
+    <div class="footer">
+      all rights reserved. &copy; WebMuseum 2000
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+    function searchArticles() {
+      var input = document.getElementById("searchInput").value.toLowerCase();
+      var articles = document.getElementsByClassName("article");
+
+      for (var i = 0; i < articles.length; i++) {
+        var title = articles[i].getElementsByTagName("h3")[0].innerHTML.toLowerCase();
+        var text = articles[i].getElementsByTagName("p")[0].innerHTML.toLowerCase();
+
+        if (title.indexOf(input) !== -1 || text.indexOf(input) !== -1) {
+          articles[i].style.display = "block";
+        } else {
+          articles[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
