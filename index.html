@@ -1,104 +1,275 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>WebMuseum 2000's</title>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-</head>
-<body>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250" />
+<title>Stronka Internetowa 2000's</title>
+<style type="text/css">
+body {
+    background-color: #99CCFF;
+    font-family: "Comic Sans MS", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #000000;
+    background-image: url('data:image/gif;base64,R0lGODlhBwAHAIABANPT0////yH5BAEAAAEALAAAAAAHAAcAAAIIjI+py+0Po5ySAAA7');
+}
 
-  <div class="page">
+#container {
+    width: 800px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    border: 3px solid #0000FF;
+    text-align: left;
+    padding: 10px;
+}
 
-    <!-- Nagłówek -->
-    <div class="header">
-      <div class="site-title">WEBMUSEUM</div>
-      <div class="tagline">retro vibes only</div>
-    </div>
+#header {
+    background-color: #FF9900;
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-bottom: 2px dashed #000000;
+}
 
-    <!-- Pasek wyszukiwarki -->
-    <div class="searchbar">
-      Search:
-      <input type="text" id="searchInput" placeholder="Szukaj w artykułach..." />
-      <button class="btn-go" onclick="searchArticles()">GO!</button>
-    </div>
+.marquee {
+    background-color: #FFFF00;
+    color: #FF0000;
+    padding: 5px;
+    font-weight: bold;
+}
 
-    <!-- Główna siatka -->
-    <div class="layout">
+.blink {
+    text-decoration: blink;
+}
 
-      <!-- Lewa nawigacja -->
-      <div class="side">
-        <div class="side-strip"></div>
-        <div class="side-nav">
-          <a href="index.html" class="nav-item">HOME</a>
-          <a href="xp.html" class="nav-item">XP</a>
-          <a href="#" class="nav-item">be on the show!</a>
-          <a href="#" class="nav-item">show tickets</a>
-          <a href="#" class="nav-item">guest book</a>
-          <a href="#" class="nav-item">buy the video</a>
-        </div>
-      </div>
+#nav {
+    background-color: #00FF00;
+    padding: 5px;
+    text-align: center;
+    border-bottom: 2px dotted #000000;
+}
 
-      <!-- Prawa zawartość -->
-      <div class="content">
+#nav a {
+    color: #0000FF;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
 
-        <div class="screen">
-          <div class="ribbon">WE GOT A WINNER!</div>
-        </div>
+#nav a:hover {
+    color: #FF0000;
+    text-decoration: underline overline;
+}
 
-        <div id="articles">
+#content {
+    padding: 15px;
+    background-color: #FFFFFF;
+}
 
-          <div class="panel article">
-            <h3>Historia Internetu</h3>
-            <img src="https://blob.gifcities.org/gifcities/YKDZRST6S6JS3KG5DPRBVLN35FY4CPDY.gif" alt="przykład" style="width:50px; height:auto;" />
-            <p>W latach 90. i na początku 2000. Internet rozwijał się w niezwykle szybkim tempie. Strony internetowe były pełne kolorów i często tworzone w HTML 3.2, co różni się od dzisiejszych trendów. Obecnie dominują minimalistyczne projekty z ograniczoną liczbą przycisków.</p>
-          </div>
+.article {
+    background-color: #EEEEEE;
+    border: 1px solid #CCCCCC;
+    margin-bottom: 15px;
+    padding: 10px;
+}
 
-          <div class="panel article">
-            <h3>WebDesign 2000</h3>
-            <img src="https://blob.gifcities.org/gifcities/BZIEEMMZ342AKFHX7SNCMBADL4C7MW4C.gif" alt="brrrrum" style="width:150px; height:auto;" />
-            <p>Styl stron internetowych zazwyczaj charakteryzował się intensywnymi kolorami, tabelami, animacjami gif oraz dźwiękami w formacie MIDI.</p>
-          </div>
+.article h2 {
+    color: #FF6600;
+    font-size: 18px;
+    border-bottom: 1px solid #999999;
+    padding-bottom: 5px;
+}
 
-          <div class="panel article">
-            <h3>WebMuseum</h3>
-            <p>Ta witryna została stworzona w celu przywrócenia atmosfery dawnych stron oraz zachowania wspomnień o złotym okresie internetu.</p>
-          </div>
+.counter {
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    color: #999999;
+    text-align: right;
+    padding: 5px;
+}
 
-          <div class="panel article">
-            <h3>Inspiracja</h3>
-            <p>Styl tej strony czerpie inspirację z dawnej witryny TAPPYTIBBONS.COM, która już nie funkcjonuje, ale jej wygląd można jeszcze zobaczyć</p>
-            <a href="https://www.webdesignmuseum.org/uploaded/fullscreen/requiem-for-a-dream-2000.png" style="display:block; text-decoration:none; font-weight:800; font-size:13px; line-height:38px; font-family:'Trebuchet MS', Tahoma, sans-serif; text-transform:lowercase; color:#102b5d; padding:0 14px; border:2px solid #0e3e8a; background:#bcd0ff;">TUTAJ</a>
-          </div>
+#footer {
+    background-color: #999999;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 5px;
+    font-size: 11px;
+    border-top: 2px solid #666666;
+}
 
-        </div>
-      </div>
-    </div>
+.under-construction {
+    text-align: center;
+    margin: 20px 0;
+}
 
-    <!-- Stopka -->
-    <div class="footer">
-      all rights reserved. &copy; WebMuseum 2000
-    </div>
+.geocities-badge {
+    text-align: center;
+    margin: 10px 0;
+}
 
-  </div>
+.guestbook-form {
+    background-color: #FFFFCC;
+    border: 1px dashed #FF9900;
+    padding: 10px;
+    margin: 15px 0;
+}
 
-  <script type="text/javascript">
-    function searchArticles() {
-      var input = document.getElementById("searchInput").value.toLowerCase();
-      var articles = document.getElementsByClassName("article");
+.guestbook-form input, .guestbook-form textarea {
+    background-color: #FFFFFF;
+    border: 1px solid #999999;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    padding: 2px;
+}
 
-      for (var i = 0; i < articles.length; i++) {
-        var title = articles[i].getElementsByTagName("h3")[0].innerHTML.toLowerCase();
-        var text = articles[i].getElementsByTagName("p")[0].innerHTML.toLowerCase();
+.guestbook-form input[type="submit"] {
+    background-color: #FF9900;
+    color: #FFFFFF;
+    font-weight: bold;
+    border: 2px outset #CC6600;
+    cursor: pointer;
+}
 
-        if (title.indexOf(input) !== -1 || text.indexOf(input) !== -1) {
-          articles[i].style.display = "block";
-        } else {
-          articles[i].style.display = "none";
-        }
-      }
+.webring {
+    text-align: center;
+    margin: 15px 0;
+    padding: 5px;
+    background-color: #FFCCFF;
+    border: 1px solid #FF00FF;
+}
+
+.visitor-counter {
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 14px;
+    color: #FF0000;
+    background-color: #000000;
+    padding: 3px;
+    display: inline-block;
+}
+</style>
+<script type="text/javascript">
+// Visitor counter with cookies
+function getVisitorCount() {
+    if (navigator.cookieEnabled) {
+        var count = parseInt(getCookie('visitorCount')) || 0;
+        count++;
+        setCookie('visitorCount', count, 365);
+        return count;
     }
-  </script>
+    return 0;
+}
 
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+// Date in the past style
+function writeDate() {
+    var months = ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", 
+                 "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"];
+    var now = new Date();
+    var day = now.getDate();
+    var month = months[now.getMonth()];
+    var year = now.getFullYear();
+    return day + " " + month + " " + year;
+}
+</script>
+</head>
+
+<body onload="document.getElementById('visitorCount').innerHTML = getVisitorCount();">
+<div id="container">
+    <div id="header">
+        <marquee behavior="scroll" direction="left" class="marquee">
+            <span class="blink">WITAJ NA MOJEJ STRONIE INTERNETOWEJ!!!</span>
+        </marquee>
+    </div>
+
+    <div id="nav">
+        <a href="#">Strona Główna</a> | 
+        <a href="#">O Mnie</a> | 
+        <a href="#">Moje Zainteresowania</a> | 
+        <a href="#">Galeria</a> | 
+        <a href="#">Linki</a> | 
+        <a href="#">Księga Gości</a> | 
+        <a href="#">Kontakt</a>
+    </div>
+
+    <div id="content">
+        <div class="under-construction">
+            <img src="data:image/gif;base64,R0lGODlhPAA8AIABANPT0////yH5BAEAAAEALAAAAAA8ADwAAAImjI+py70Ao5y02otuDnyT2HVfBYKeZJkGaJbqyrZuC8dyTRkAOw==" alt="Strona w budowie" /><br />
+            <strong>STRONA W BUDOWIE!</strong>
+        </div>
+
+        <div class="article">
+            <h2>Witaj na mojej stronie!</h2>
+            <p>Cześć! Nazywam się <strong>WebMaster</strong> i to jest moja własna strona internetowa, którą stworzyłem w 2005 roku.</p>
+            <p>Tutaj znajdziesz wiele ciekawych informacji o mnie, moich zainteresowaniach i wiele więcej!</p>
+            <p>Zapraszam do zwiedzania i nie zapomnij wpisać się do mojej księgi gości!</p>
+        </div>
+
+        <div class="article">
+            <h2>Moje Zainteresowania</h2>
+            <p>• <font color="#FF0000">Muzyka</font> - Słucham głównie zespołów z lat 90-tych!</p>
+            <p>• <font color="#0000FF">Gry komputerowe</font> - Uwielbiam grać w Counter-Strike 1.6 i Warcraft III!</p>
+            <p>• <font color="#00FF00">Programowanie</font> - Uczę się HTML, CSS i JavaScript!</p>
+            <p>• <font color="#FF00FF">Sport</font> - Lubię jeździć na rowerze i grać w piłkę nożną!</p>
+        </div>
+
+        <div class="guestbook-form">
+            <h2>Księga Gości</h2>
+            <form action="#" method="post">
+                <p>Imię: <input type="text" name="name" size="20" /></p>
+                <p>E-mail: <input type="text" name="email" size="25" /></p>
+                <p>Wiadomość:<br />
+                <textarea name="message" rows="5" cols="40"></textarea></p>
+                <p><input type="submit" value="Wyślij!" /></p>
+            </form>
+        </div>
+
+        <div class="webring">
+            <strong>NALEŻĘ DO WEBRINGU!</strong><br />
+            <a href="#"><img src="data:image/gif;base64,R0lGODlhRQAFAJEAANPT0+np6e/v7yH5BAEAAAIALAAAAABFAAUAAAIfhI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8dUAQA7" alt="Członek Webringu" /></a>
+        </div>
+
+        <div class="geocities-badge">
+            <a href="#">
+                <img src="data:image/gif;base64,R0lGODlhgACAAJEAANPT0yH5BAEAAAIALAAAAACAAIAAAIfhI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8dyTRkAOw==" alt="GeoCities" />
+            </a>
+        </div>
+    </div>
+
+    <div class="counter">
+        Liczba odwiedzin: <span class="visitor-counter" id="visitorCount">0</span><br />
+        Ostatnia aktualizacja: <script type="text/javascript">document.write(writeDate());</script>
+    </div>
+
+    <div id="footer">
+        © 2005 WebMaster - Wszelkie prawa zastrzeżone<br />
+        Strona najlepiej wygląda w Internet Explorer 6 w rozdzielczości 800x600<br />
+        Hosting zapewnia: <a href="#" style="color: #FFFFFF;">Darmowy Hosting</a>
+    </div>
+</div>
+
+<!-- Tracker -->
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="" width="1" height="1" />
 </body>
 </html>
