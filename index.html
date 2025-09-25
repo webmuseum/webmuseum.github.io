@@ -1,102 +1,212 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1250" />
-<title>Stronka Internetowa 2000's</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Stronka Internetowa – Edycja Windows XP</title>
 <style type="text/css">
 body {
-    background-color: #99CCFF;
-    font-family: "Comic Sans MS", Arial, sans-serif;
+    background: #d9e8fb url('image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFUlEQVQYV2NkYGD4z4AHMI6aQBsAABcUBXhFzK5mAAAAAElFTkSuQmCC') repeat-x top;
+    font-family: "Tahoma", "Verdana", "Arial", sans-serif;
+    font-size: 12px;
     margin: 0;
-    padding: 0;
-    text-align: center;
-    color: #000000;
-    background-image: url('data:image/gif;base64,R0lGODlhBwAHAIABANPT0////yH5BAEAAAEALAAAAAAHAAcAAAIIjI+py+0Po5ySAAA7');
+    padding: 20px 10px;
+    color: #000;
+    line-height: 1.4;
 }
 
 #container {
-    width: 800px;
+    width: 780px;
     margin: 0 auto;
-    background-color: #FFFFFF;
-    border: 3px solid #0000FF;
-    text-align: left;
-    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #8698aa;
+    border-left: 1px solid #b5c7de;
+    border-top: 1px solid #b5c7de;
+    padding: 12px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
 }
 
+/* Nagłówek – jak pasek tytułu w XP */
 #header {
-    background-color: #FF9900;
-    padding: 10px;
+    background: linear-gradient(to bottom, #0a246a, #1a367f);
+    padding: 6px 10px;
     text-align: center;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
-    color: #FFFFFF;
-    border-bottom: 2px dashed #000000;
+    color: white;
+    border-bottom: 1px solid #5a7295;
+    margin-bottom: 12px;
+    border-radius: 3px 3px 0 0;
 }
 
 .marquee {
-    background-color: #FFFF00;
-    color: #FF0000;
-    padding: 5px;
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
     font-weight: bold;
+    letter-spacing: 1px;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
 }
 
 .blink {
-    text-decoration: blink;
+    animation: blink 1.2s step-end infinite;
 }
 
+@keyframes blink {
+    50% { opacity: 0.4; }
+}
+
+/* Pasek nawigacyjny – jak pasek zadań */
 #nav {
-    background-color: #00FF00;
-    padding: 5px;
+    background: linear-gradient(to bottom, #f0f4ff, #d9e8fb);
+    padding: 6px 0;
     text-align: center;
-    border-bottom: 2px dotted #000000;
+    border: 1px solid #b5c7de;
+    border-bottom: 1px solid #8698aa;
+    margin-bottom: 15px;
+    border-radius: 3px;
 }
 
 #nav a {
-    color: #0000FF;
+    color: #0a246a;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 8px;
     font-weight: bold;
+    padding: 3px 8px;
+    border: 1px solid transparent;
 }
 
 #nav a:hover {
-    color: #FF0000;
-    text-decoration: underline overline;
+    background: #e0e8f4;
+    border: 1px solid #b5c7de;
+    border-radius: 2px;
+    text-decoration: none;
 }
 
-#content {
-    padding: 15px;
-    background-color: #FFFFFF;
-}
-
+/* Artykuły – jak okienka dialogowe */
 .article {
-    background-color: #EEEEEE;
-    border: 1px solid #CCCCCC;
-    margin-bottom: 15px;
-    padding: 10px;
+    background: #f8fafd;
+    border: 1px solid #b5c7de;
+    margin-bottom: 18px;
+    padding: 12px;
+    border-radius: 3px;
 }
 
 .article h2 {
-    color: #FF6600;
-    font-size: 18px;
-    border-bottom: 1px solid #999999;
+    color: #0a246a;
+    font-size: 15px;
+    margin-top: 0;
     padding-bottom: 5px;
+    border-bottom: 1px solid #d0d8e8;
+    font-weight: bold;
 }
 
+/* Zainteresowania – subtelne kolory */
+.interest-music { color: #8b0000; }
+.interest-games { color: #00008b; }
+.interest-coding { color: #006400; }
+.interest-sport { color: #8b008b; }
+
+/* Księga gości – jak formularz systemowy */
+.guestbook-form {
+    background: #f5f9ff;
+    border: 1px solid #b5c7de;
+    padding: 14px;
+    margin: 18px 0;
+    border-radius: 3px;
+}
+
+.guestbook-form h2 {
+    margin-top: 0;
+    color: #0a246a;
+    font-size: 15px;
+}
+
+.guestbook-form input,
+.guestbook-form textarea {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #b5c7de;
+    background: white;
+    font-family: Tahoma, Verdana, Arial;
+    font-size: 12px;
+}
+
+.guestbook-form input[type="submit"] {
+    background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+    border: 1px solid #b5c7de;
+    border-top: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    color: #000;
+    font-weight: bold;
+    padding: 4px 12px;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 2px;
+}
+
+.guestbook-form input[type="submit"]:active {
+    background: linear-gradient(to bottom, #e0e0e0, #f0f0f0);
+    border-top: 1px solid #b5c7de;
+    border-left: 1px solid #b5c7de;
+}
+
+/* Webring i badge – subtelne */
+.webring {
+    text-align: center;
+    margin: 18px 0;
+    padding: 10px;
+    background: #f0f4ff;
+    border: 1px solid #b5c7de;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.geocities-badge {
+    text-align: center;
+    margin: 15px 0;
+}
+
+/* Licznik – jak status bar */
 .counter {
     font-family: "Courier New", monospace;
-    font-size: 12px;
-    color: #999999;
+    font-size: 11px;
+    color: #444;
     text-align: right;
-    padding: 5px;
+    padding: 6px 0;
+    border-top: 1px solid #d0d8e8;
+    margin-top: 12px;
 }
 
+.visitor-counter {
+    font-family: "Tahoma", "Arial", sans-serif;
+    font-weight: bold;
+    color: #0a246a;
+    background: #f0f4ff;
+    padding: 2px 6px;
+    border: 1px solid #b5c7de;
+    border-radius: 2px;
+}
+
+/* Stopka – jak pasek stanu */
 #footer {
-    background-color: #999999;
-    color: #FFFFFF;
+    background: #e0e8f4;
+    color: #0a246a;
     text-align: center;
-    padding: 5px;
+    padding: 8px;
     font-size: 11px;
-    border-top: 2px solid #666666;
+    border-top: 1px solid #b5c7de;
+    margin-top: 15px;
+    border-radius: 0 0 3px 3px;
+}
+
+#footer a {
+    color: #0a246a;
+    text-decoration: underline;
 }
 
 .under-construction {
@@ -104,53 +214,22 @@ body {
     margin: 20px 0;
 }
 
-.geocities-badge {
-    text-align: center;
-    margin: 10px 0;
-}
-
-.guestbook-form {
-    background-color: #FFFFCC;
-    border: 1px dashed #FF9900;
-    padding: 10px;
-    margin: 15px 0;
-}
-
-.guestbook-form input, .guestbook-form textarea {
-    background-color: #FFFFFF;
-    border: 1px solid #999999;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    padding: 2px;
-}
-
-.guestbook-form input[type="submit"] {
-    background-color: #FF9900;
-    color: #FFFFFF;
-    font-weight: bold;
-    border: 2px outset #CC6600;
-    cursor: pointer;
-}
-
-.webring {
-    text-align: center;
-    margin: 15px 0;
-    padding: 5px;
-    background-color: #FFCCFF;
-    border: 1px solid #FF00FF;
-}
-
-.visitor-counter {
-    font-family: "Arial Black", Arial, sans-serif;
-    font-size: 14px;
-    color: #FF0000;
-    background-color: #000000;
-    padding: 3px;
-    display: inline-block;
+/* Responsywność – minimalna, ale działająca */
+@media (max-width: 800px) {
+    #container {
+        width: auto;
+        margin: 0 5px;
+        padding: 10px;
+    }
+    
+    #nav a {
+        display: inline-block;
+        margin: 4px 2px;
+        font-size: 11px;
+    }
 }
 </style>
 <script type="text/javascript">
-// Visitor counter with cookies
 function getVisitorCount() {
     if (navigator.cookieEnabled) {
         var count = parseInt(getCookie('visitorCount')) || 0;
@@ -182,40 +261,41 @@ function getCookie(name) {
     return null;
 }
 
-// Date in the past style
 function writeDate() {
-    var months = ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", 
-                 "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"];
-    var now = new Date();
-    var day = now.getDate();
-    var month = months[now.getMonth()];
-    var year = now.getFullYear();
-    return day + " " + month + " " + year;
+    const months = ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", 
+                   "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"];
+    const now = new Date();
+    return `${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
 }
+
+window.addEventListener('load', function() {
+    document.getElementById('visitorCount').textContent = getVisitorCount();
+    document.getElementById('lastUpdate').textContent = writeDate();
+});
 </script>
 </head>
 
-<body onload="document.getElementById('visitorCount').innerHTML = getVisitorCount();">
+<body>
 <div id="container">
     <div id="header">
-        <marquee behavior="scroll" direction="left" class="marquee">
+        <div class="marquee">
             <span class="blink">WITAJ NA MOJEJ STRONIE INTERNETOWEJ!!!</span>
-        </marquee>
+        </div>
     </div>
 
     <div id="nav">
-        <a href="#">Strona Główna</a> | 
-        <a href="#">O Mnie</a> | 
-        <a href="#">Moje Zainteresowania</a> | 
-        <a href="#">Galeria</a> | 
-        <a href="#">Linki</a> | 
-        <a href="#">Księga Gości</a> | 
+        <a href="#">Strona Główna</a>
+        <a href="#">O Mnie</a>
+        <a href="#">Moje Zainteresowania</a>
+        <a href="#">Galeria</a>
+        <a href="#">Linki</a>
+        <a href="#">Księga Gości</a>
         <a href="#">Kontakt</a>
     </div>
 
     <div id="content">
         <div class="under-construction">
-            <img src="data:image/gif;base64,R0lGODlhPAA8AIABANPT0////yH5BAEAAAEALAAAAAA8ADwAAAImjI+py70Ao5y02otuDnyT2HVfBYKeZJkGaJbqyrZuC8dyTRkAOw==" alt="Strona w budowie" /><br />
+            <img src="image/gif;base64,R0lGODlhPAA8AIABANPT0////yH5BAEAAAEALAAAAAA8ADwAAAImjI+py70Ao5y02otuDnyT2HVfBYKeZJkGaJbqyrZuC8dyTRkAOw==" alt="Strona w budowie" /><br />
             <strong>STRONA W BUDOWIE!</strong>
         </div>
 
@@ -228,19 +308,23 @@ function writeDate() {
 
         <div class="article">
             <h2>Moje Zainteresowania</h2>
-            <p>• <font color="#FF0000">Muzyka</font> - Słucham głównie zespołów z lat 90-tych!</p>
-            <p>• <font color="#0000FF">Gry komputerowe</font> - Uwielbiam grać w Counter-Strike 1.6 i Warcraft III!</p>
-            <p>• <font color="#00FF00">Programowanie</font> - Uczę się HTML, CSS i JavaScript!</p>
-            <p>• <font color="#FF00FF">Sport</font> - Lubię jeździć na rowerze i grać w piłkę nożną!</p>
+            <ul style="padding-left: 20px; margin: 10px 0;">
+                <li><span class="interest-music">Muzyka</span> – Słucham głównie zespołów z lat 90-tych!</li>
+                <li><span class="interest-games">Gry komputerowe</span> – Uwielbiam grać w Counter-Strike 1.6 i Warcraft III!</li>
+                <li><span class="interest-coding">Programowanie</span> – Uczę się HTML, CSS i JavaScript!</li>
+                <li><span class="interest-sport">Sport</span> – Lubię jeździć na rowerze i grać w piłkę nożną!</li>
+            </ul>
         </div>
 
         <div class="guestbook-form">
             <h2>Księga Gości</h2>
             <form action="#" method="post">
-                <p>Imię: <input type="text" name="name" size="20" /></p>
-                <p>E-mail: <input type="text" name="email" size="25" /></p>
-                <p>Wiadomość:<br />
-                <textarea name="message" rows="5" cols="40"></textarea></p>
+                <p><label>Imię: <input type="text" name="name" /></label></p>
+                <p><label>E-mail: <input type="email" name="email" /></label></p>
+                <p>
+                    <label>Wiadomość:<br />
+                    <textarea name="message" rows="4"></textarea></label>
+                </p>
                 <p><input type="submit" value="Wyślij!" /></p>
             </form>
         </div>
@@ -259,17 +343,16 @@ function writeDate() {
 
     <div class="counter">
         Liczba odwiedzin: <span class="visitor-counter" id="visitorCount">0</span><br />
-        Ostatnia aktualizacja: <script type="text/javascript">document.write(writeDate());</script>
+        Ostatnia aktualizacja: <span id="lastUpdate"></span>
     </div>
 
     <div id="footer">
         © 2005 WebMaster - Wszelkie prawa zastrzeżone<br />
         Strona najlepiej wygląda w Internet Explorer 6 w rozdzielczości 800x600<br />
-        Hosting zapewnia: <a href="#" style="color: #FFFFFF;">Darmowy Hosting</a>
+        Hosting zapewnia: <a href="#">Darmowy Hosting</a>
     </div>
 </div>
 
-<!-- Tracker -->
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="" width="1" height="1" />
 </body>
 </html>
